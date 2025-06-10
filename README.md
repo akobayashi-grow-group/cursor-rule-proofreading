@@ -1,4 +1,4 @@
-# Text Linter
+# Cursor Proofreader
 
 既存の`proofreader.js`とCursorのLLMを使って、WebページのテキストコンテンツをAIで校正するツールです。
 
@@ -47,23 +47,22 @@ Cursorで以下のいずれかを入力するだけで**自動実行**されま�
 - 「チェック」
 - 「lint」
 
-
-### 3. 処理フロー
+## 実行される内容
 
 自動実行時は以下の2段階で処理されます：
 
-#### ステップ1: テキスト抽出
+### ステップ1: テキスト抽出
 ```bash
 node proofreader.js
 ```
 - `text-extraction-[timestamp].md`ファイルが生成されます
 - 各URLからテキストが抽出され、校正用のプロンプトが準備されます
 
-#### ステップ2: LLM校正
+### ステップ2: LLM校正
 - 抽出されたテキストに対してCursorのLLMが校正を実行
 - `proofreading-report-[timestamp].md`ファイルが生成されます
 
-### 4. 結果の確認
+## 結果の確認方法
 
 最終的に以下の2つのレポートファイルが生成されます：
 
