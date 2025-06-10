@@ -1,0 +1,6 @@
+# URL List for Text Linting
+# Add URLs one per line (lines starting with # are ignored)
+# Example:
+# https://example.com
+# https://example.org/page1
+# https://example.net/article 

@@ -1,0 +1,27 @@
+{
+  "name": "text-linter",
+  "version": "1.0.0",
+  "description": "Web page text proofreading tool using Playwright MCP and Cursor Agent",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "lint": "node index.js"
+  },
+  "keywords": [
+    "text-correction",
+    "proofreading",
+    "playwright",
+    "mcp",
+    "web-scraping"
+  ],
+  "dependencies": {
+    "@playwright/mcp": "^0.0.28",
+    "fs-extra": "^11.2.0",
+    "path": "^0.12.7"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "",
+  "license": "MIT"
+} 
