@@ -1,13 +1,13 @@
 # Text Linter
 
-Playwright MCPとCursor Agentを使用して、WebページのテキストコンテンツをAIで校正するツールです。
+既存の`proofreader.js`とCursorのLLMを使って、WebページのテキストコンテンツをAIで校正するツールです。
 
 ## 機能
 
-- 📄 URLリストからWebページのテキスト自動取得
+- 📄 URLリストからWebページのテキスト自動取得（`proofreader.js`）
 - 🔍 mainタグ優先、フォールバックでbodyタグからテキスト抽出
 - 🤖 CursorのLLMによる誤字・誤記の自動校正
-- 📊 詳細なレポート生成
+- 📊 詳細なレポート生成（抽出結果と校正結果の2段階）
 - ⚡ 並列処理対応（最大2ページ同時）
 - 🌐 日本語・英語対応
 
@@ -17,7 +17,6 @@ Playwright MCPとCursor Agentを使用して、Webページのテキストコン
 
 - Node.js 18以上
 - Cursor Editor
-- Playwright MCP サーバー
 
 ### インストール
 
@@ -41,21 +40,35 @@ https://blog.example.net/post/123
 
 ### 2. 校正の実行
 
-Cursorで以下のいずれかを入力するだけで自動実行されます：
+Cursorで以下のいずれかを入力するだけで**自動実行**されます：
 
 - 「校正して」
-- 「校正」
+- 「校正」  
 - 「チェック」
 - 「lint」
 
-### 3. 結果の確認
 
-処理完了後、`report-[timestamp].md`ファイルが生成されます。このレポートには以下が含まれます：
+### 3. 処理フロー
 
-- 各ページの校正結果
-- 発見された誤字・誤記の詳細
-- アクセスエラーの報告
-- 処理統計
+自動実行時は以下の2段階で処理されます：
+
+#### ステップ1: テキスト抽出
+```bash
+node proofreader.js
+```
+- `text-extraction-[timestamp].md`ファイルが生成されます
+- 各URLからテキストが抽出され、校正用のプロンプトが準備されます
+
+#### ステップ2: LLM校正
+- 抽出されたテキストに対してCursorのLLMが校正を実行
+- `proofreading-report-[timestamp].md`ファイルが生成されます
+
+### 4. 結果の確認
+
+最終的に以下の2つのレポートファイルが生成されます：
+
+1. **`text-extraction-[timestamp].md`**: テキスト抽出結果
+2. **`proofreading-report-[timestamp].md`**: 校正結果と統計
 
 ## 校正仕様
 
@@ -116,11 +129,7 @@ Generated: 2024/12/19 14:30:25
 
 ## トラブルシューティング
 
-### Playwright MCPが利用できない場合
-
-Cursor環境でPlaywright MCPサーバーが設定されていることを確認してください。
-
-### ブラウザが見つからない場合
+### Playwrightブラウザが見つからない場合
 
 以下のコマンドでブラウザをインストールしてください：
 
@@ -139,16 +148,17 @@ npx playwright install
 ### アーキテクチャ
 
 ```
-[urls.txt] → [Playwright MCP] → [Web Pages] → [Text Extraction] → [LLM Proofreading] → [Report]
+[urls.txt] → [proofreader.js] → [Web Pages] → [Text Extraction] → [LLM Proofreading] → [Reports]
 ```
 
 ### 処理フロー
 
-1. URLリスト読み込み
+1. URLリスト読み込み（`proofreader.js`）
 2. 2つずつ並列でWebページアクセス
 3. テキスト抽出（main → body フォールバック）
-4. LLMによる校正処理
-5. 結果をレポートに集約
+4. テキスト抽出レポート生成
+5. CursorのLLMによる校正処理
+6. 最終校正レポート生成
 
 ### エラーハンドリング
 
@@ -156,14 +166,8 @@ npx playwright install
 - テキストなし: エラーレポートに記録
 - 処理タイムアウト: 個別にスキップ
 
-## ライセンス
+### 重要な制約事項
 
-MIT License
-
-## 開発・貢献
-
-Issue報告やPull Requestは歓迎します。
-
----
-
-**作成者**: Cursor Agent Tool 
+- **既存の`proofreader.js`を使用**: 新しいJavaScriptファイルは作成されません
+- **レポートファイルのみ新規作成**: `.md`ファイルのみが新規生成されます
+- **同時処理制限**: 最大2URL同時処理（`proofreader.js`内で制御済み）
