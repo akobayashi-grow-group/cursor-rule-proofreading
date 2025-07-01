@@ -7,9 +7,9 @@
     "clean": "node -e \"const fs = require('fs'); const path = require('path'); ['report', 'text-extraction'].forEach(dir => { if (fs.existsSync(dir)) { fs.readdirSync(dir).forEach(file => { if (file !== '.gitkeep') { const filePath = path.join(dir, file); if (fs.statSync(filePath).isFile()) fs.unlinkSync(filePath); } }); } });\""
   },
   "dependencies": {
-    "fs-extra": "^11.2.0",
+    "fs-extra": "^11.3.0",
     "path": "^0.12.7",
-    "playwright": "^1.53.0-alpha-2025-05-27"
+    "playwright": "^1.53.2"
   },
   "engines": {
     "node": ">=18.0.0"
