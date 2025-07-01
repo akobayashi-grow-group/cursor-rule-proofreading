@@ -1,7 +1,7 @@
 {
   "name": "text-linter",
   "version": "1.0.0",
-  "description": "Web page text proofreading tool using Playwright MCP and Cursor Agent",
+  "description": "Web page text proofreading tool using Cursor Agent",
   "scripts": {
     "start": "node proofreader.js",
     "clean": "node -e \"const fs = require('fs'); const path = require('path'); ['report', 'text-extraction'].forEach(dir => { if (fs.existsSync(dir)) { fs.readdirSync(dir).forEach(file => { if (file !== '.gitkeep') { const filePath = path.join(dir, file); if (fs.statSync(filePath).isFile()) fs.unlinkSync(filePath); } }); } });\""
