@@ -14,7 +14,7 @@ class WebTextProofreader {
     // 同時処理するページ数の上限（デフォルト: 2）
     this.maxConcurrent = options.maxConcurrent || 2;
     // バッチ分割の単位（デフォルト:4ページ）
-    this.pagesPerBatch = options.pagesPerBatch || 4;
+    this.pagesPerBatch = options.pagesPerBatch || 2;
     // テキスト抽出結果を格納する配列
     this.results = [];
     // エラー情報を格納する配列
