@@ -46,12 +46,12 @@
 
 ### サマリーテーブル行の形式
 ```
-| [PAGE_NUM] | [URL_PATH] ([TITLE]) | [ERROR_COUNT] | [STATUS_ICON] [STATUS_TEXT] |
+| [PAGE_NUM] | [URL_PATH] | [ERROR_COUNT] | [STATUS_ICON] [STATUS_TEXT] |
 ```
 
 ### 詳細結果の形式
 ```
-### [PAGE_NUM]. [TITLE]
+### [PAGE_NUM]
 URL: [URL_PATH]
 
 **誤記箇所 [ERROR_NUM]:**
