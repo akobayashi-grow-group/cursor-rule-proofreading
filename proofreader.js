@@ -63,42 +63,6 @@ class WebTextProofreader {
     }
   }
 
-  // このメソッドはCursorのLLMが校正を実行することを想定しています
-  getProofreadingPrompt(textData) {
-    return `以下のテキストの誤字・誤記をチェックして、問題がある箇所のみを指摘してください。
-
-【校正対象テキスト】
-${textData.originalText}
-
-【校正観点】
-1. 基本的な誤字・誤記
-   - タイポ、スペルミス
-   - 明らかな文法エラー
-   - 固有名詞の綴り
-   - 変換ミス
-2. 日本語固有の観点
-   - 漢字の使い分け
-   - 同音異義語の使い分け
-   - 送り仮名の正確性
-   - 助詞の使い方（「は」vs「わ」等）
-3. 英語固有の観点
-   - 英単語の綴り
-
-【指摘形式】
-- 誤字・誤記がある場合のみ、以下の形式で指摘してください：
-  - 位置: [該当箇所の前後の文脈]
-  - 誤り: [間違っている部分]
-  - 修正案: [正しい表記]
-  - 理由: [修正理由]
-- 誤字・誤記がない場合は「校正すべき箇所はありませんでした。」とだけ回答してください。
-
-【注意事項】
-- 英語・日本語両方対応
-- 明確な誤字・誤記のみを指摘（文体や表現の好みは除く）
-- 応答には校正結果のみを返すこと
-- 応答には校正対象テキストを含めないこと`;
-  }
-
   async processUrls(urls) {
     const browser = await chromium.launch({ headless: true });
     
@@ -123,7 +87,6 @@ ${textData.originalText}
               url: textData.url,
               originalText: textData.originalText,
               wordCount: textData.wordCount,
-              proofreadingPrompt: this.getProofreadingPrompt(textData)
             });
           }
         }
@@ -147,7 +110,7 @@ ${textData.originalText}
       this.results.forEach((result, index) => {
         report += `### ${index + 1}. ${result.url}\n\n`;
         report += `**Word Count:** ${result.wordCount}\n\n`;
-        report += `**Extracted Text:**\n\`\`\`\n${result.originalText.substring(0, 1000)}${result.originalText.length > 1000 ? '...' : ''}\n\`\`\`\n\n`;
+        report += `**Extracted Text:**\n\`\`\`\n${result.originalText}\n\`\`\`\n\n`;
         report += `---\n\n`;
       });
     }
