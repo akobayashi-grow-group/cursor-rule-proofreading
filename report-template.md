@@ -1,8 +1,7 @@
 # 校正レポート
 
 **生成日時:** [TIMESTAMP]  
-**処理対象:** [TOTAL_PAGES]ページ  
-**校正エンジン:** Cursor LLM + proofreader.js
+**処理対象:** [TOTAL_PAGES]ページ 
 
 ## 校正結果サマリー
 
@@ -22,7 +21,6 @@
 
 - **処理時間:** [PROCESSING_TIME]
 - **総文字数:** [TOTAL_CHARS]文字
-- **誤記発見率:** [ERROR_RATE]%（[TOTAL_ERRORS]件/[TOTAL_CHARS]文字）
 - **正常ページ:** [CLEAN_PAGES]ページ（[CLEAN_PERCENTAGE]%）
 - **要修正ページ:** [ERROR_PAGES]ページ（[ERROR_PERCENTAGE]%）
 
@@ -41,7 +39,6 @@
 - `[DETAILED_RESULTS]`: 詳細な校正結果
 - `[PROCESSING_TIME]`: 処理時間
 - `[TOTAL_CHARS]`: 総文字数
-- `[ERROR_RATE]`: 誤記発見率
 - `[CLEAN_PAGES]`: 正常ページ数
 - `[CLEAN_PERCENTAGE]`: 正常ページの割合
 - `[ERROR_PAGES]`: 要修正ページ数
@@ -54,7 +51,8 @@
 
 ### 詳細結果の形式
 ```
-### [PAGE_NUM]. [TITLE]（[ERROR_COUNT]件）
+### [PAGE_NUM]. [TITLE]
+URL: [URL_PATH]
 
 **誤記箇所 [ERROR_NUM]:**
 - **位置:** [CONTEXT]
