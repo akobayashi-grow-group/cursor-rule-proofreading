@@ -98,7 +98,7 @@ class WebTextProofreader {
 
   generateInitialReport() {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const reportPath = `text-extraction-${timestamp}.md`;
+    const reportPath = `text-extraction/text-extraction-${timestamp}.md`;
     
     let report = `# Text Extraction Report\n\n`;
     report += `Generated: ${new Date().toLocaleString()}\n\n`;

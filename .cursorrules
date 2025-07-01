@@ -27,7 +27,7 @@
    - エラーハンドリングとレポート生成
 
 3. **抽出結果の確認**
-   - 生成された `text-extraction-[timestamp].md` ファイルを確認
+   - 生成された `text-extraction/text-extraction-[timestamp].md` ファイルを確認
    - 抽出されたテキストデータを取得
 
 4. **校正実行**
@@ -72,7 +72,7 @@
 
 5. **最終レポート生成**
    - 全ての校正結果をMarkdown形式で最終レポート生成
-   - ファイル名: `proofreading-report-[timestamp].md`
+   - ファイル名: `report/proofreading-report-[timestamp].md`
    - **レポート形式**: `report-template.md`のテンプレートを使用
    - プレースホルダーを実際のデータで置換してレポート作成
    - 校正結果のみを返す
