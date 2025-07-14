@@ -48,6 +48,7 @@ URLリストからWebページのテキストを取得し、誤字・脱字の�
 4. **最終レポート生成**
    - report/proofreading-report-temporary.md の内容を元に、`report-template.md`テンプレートを使用してレポート生成
    - ファイル名: `report/proofreading-report-[timestamp].md`
+   - [timestamp]は text-extraction-[timestamp].md のファイル名と同じ文字列を使用。
    - 全ての校正結果を1ファイルに記録（「正常」も含む）
 
 ## 校正品質保証
