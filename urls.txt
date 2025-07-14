@@ -4,3 +4,41 @@
 # https://example.com
 # https://example.org/page1
 # https://example.net/article 
+
+https://tentac-wp.grgr.blue/
+https://tentac-wp.grgr.blue/story/
+https://tentac-wp.grgr.blue/strength-of-tentac/
+https://tentac-wp.grgr.blue/business-domain/
+https://tentac-wp.grgr.blue/business-domain/apparel/
+https://tentac-wp.grgr.blue/business-domain/rfid/
+https://tentac-wp.grgr.blue/business-domain/rfid/tags/
+https://tentac-wp.grgr.blue/business-domain/rfid/seals/
+https://tentac-wp.grgr.blue/business-domain/rfid/care-label/
+https://tentac-wp.grgr.blue/business-domain/rfid/metal-compatible-tags/
+https://tentac-wp.grgr.blue/business-domain/rfid/laundry-tags/
+https://tentac-wp.grgr.blue/business-domain/rfid/hard-tag/
+https://tentac-wp.grgr.blue/business-domain/rfid/eco/
+https://tentac-wp.grgr.blue/business-domain/sustainable/
+https://tentac-wp.grgr.blue/company/
+https://tentac-wp.grgr.blue/unique-lineup/
+https://tentac-wp.grgr.blue/unique-lineup/hazainano/
+https://tentac-wp.grgr.blue/unique-lineup/greennano/
+https://tentac-wp.grgr.blue/unique-lineup/kami-nano/
+https://tentac-wp.grgr.blue/unique-lineup/eco-rfid/
+https://tentac-wp.grgr.blue/unique-lineup/transmark/
+https://tentac-wp.grgr.blue/unique-lineup/ghost-ink/
+https://tentac-wp.grgr.blue/unique-lineup/greennano_carbon-offset/
+https://tentac-wp.grgr.blue/unique-lineup/filmless/
+https://tentac-wp.grgr.blue/download/
+https://tentac-wp.grgr.blue/case/
+https://tentac-wp.grgr.blue/case/industry/medical/
+https://tentac-wp.grgr.blue/case/case-26755/
+https://tentac-wp.grgr.blue/news-and-journal/
+https://tentac-wp.grgr.blue/news-and-journal/category/news/
+https://tentac-wp.grgr.blue/news-and-journal/post-27762/
+https://tentac-wp.grgr.blue/what-is-rfid/
+https://tentac-wp.grgr.blue/what-is-rfid/rfid/
+https://tentac-wp.grgr.blue/what-is-rfid/rfid-tag/
+https://tentac-wp.grgr.blue/what-is-rfid/rfid-reader/
+https://tentac-wp.grgr.blue/contact/
+https://tentac-wp.grgr.blue/recruit/
